@@ -62,7 +62,7 @@ export const HeroSection = () => {
             <div className="relative magnetic">
               <div className="w-80 h-80 rounded-full overflow-hidden elite-glow border-4 border-elite-purple/20">
                 <img
-                    src="/public/houssam.JPG"
+                    src="/src/components/ui/houssam.JPG"
                     alt="Votre photo de profil"
                     className="w-full h-full object-cover object-center filter brightness-110"
                 />
