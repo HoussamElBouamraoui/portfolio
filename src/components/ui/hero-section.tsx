@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 export const HeroSection = () => {
   const [terminalText, setTerminalText] = useState("");
   const [showContent, setShowContent] = useState(false);
-  
+  const [showCvActions, setShowCvActions] = useState(false);
+
   const terminalCommands = [
     "> Initialisation  ...",
     "> Chargement des outils de Houssam...",
@@ -102,10 +103,30 @@ export const HeroSection = () => {
                   Voir mes projets
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="elite-glow border-elite-purple text-elite-purple hover:bg-elite-purple hover:text-white magnetic">
-                <Download className="mr-2 h-5 w-5" />
-                Télécharger mon CV
-              </Button>
+              <div className="relative">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="elite-glow border-elite-purple text-elite-purple hover:bg-elite-purple hover:text-white magnetic"
+                  onClick={() => setShowCvActions((v) => !v)}
+                >
+                  CV
+                </Button>
+                {showCvActions && (
+                  <div className="absolute left-0 mt-2 flex flex-col gap-2 z-20">
+                    <Button asChild size="sm" className="w-40 elite-glow border-elite-purple text-elite-purple bg-white hover:bg-elite-purple hover:text-white">
+                      <a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+                        Voir le CV
+                      </a>
+                    </Button>
+                    <Button asChild size="sm" className="w-40 elite-glow border-elite-purple text-elite-purple bg-white hover:bg-elite-purple hover:text-white">
+                      <a href="/CV.pdf" download>
+                        Télécharger le CV
+                      </a>
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
