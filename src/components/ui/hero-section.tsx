@@ -7,11 +7,11 @@ export const HeroSection = () => {
   const [terminalText, setTerminalText] = useState("");
   const [showContent, setShowContent] = useState(false);
   const [showCvActions, setShowCvActions] = useState(false);
-  
-  const profileImages = [
-    "/src/components/ui/houssam.png",
-    "/src/components/ui/houssam2.png"
-  ];
+
+    const profileImages: string[] = [
+        "/houssam.png",
+        "/houssam2.png"
+    ];
 
   const terminalCommands = [
     "> Initialisation  ...",
