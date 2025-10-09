@@ -9,7 +9,7 @@ export const ProjectsSection = () => {
       title: "SecureXplorer",
       description: "SecureXplorer est une plateforme web tout-en-un pour l’analyse de sécurité réseau et web. Elle propose une interface moderne et intuitive permettant d’utiliser plusieurs outils d’audit sans aucune installation locale.",
       icon: Lock,
-      stack: ["PHP", "MySQL", "Sessions", "Python","JS","Css"],
+      stack: ["PHP", "MySQL", "Sessions", "Python","JS","Css","PHPMAILER"],
       gradient: "from-elite-purple to-elite-purple-light",
       linkedin:"https://www.linkedin.com/posts/el-bouamraoui-houssam-0569a1326_cybersaezcuritaez-daezveloppementweb-python-activity-7346671559475924992-ftdh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJfPQIBhVJ-_7LDaVjb7glTMqPvdnsJ2dY",
       demo: "https://www.linkedin.com/posts/el-bouamraoui-houssam-0569a1326_cybersaezcuritaez-daezveloppementweb-python-activity-7346671559475924992-ftdh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJfPQIBhVJ-_7LDaVjb7glTMqPvdnsJ2dY",
@@ -22,7 +22,7 @@ export const ProjectsSection = () => {
       title: "SmartNote",
       description: "Application de prise de notes intelligente permettant à l'utilisateur de rédiger, organiser et sauvegarder ses notes. Grâce à une intelligence artificielle intégrée, l'utilisateur peut générer automatiquement un résumé synthétique de ses notes. Ensuite, il peut créer et passer un examen personnalisé basé sur le contenu de ses notes pour s'auto-évaluer. Développé en PHP et JavaScript, avec une interface interactive et une gestion sécurisée des sessions.",
       icon: FileText,
-      stack: ["PHP", "JS", "Sessions", "HTML", "CSS"],
+      stack: ["PHP", "JS", "Sessions", "HTML", "CSS" ,"PHPMAILER"],
       gradient: "from-elite-white to-elite-purple",
       demo: "https://github.com/HoussamElBouamraoui/module-note/",
       images: [

@@ -4,7 +4,7 @@ import { Code, Shield, Zap } from "lucide-react";
 export const AboutSection = () => {
   const skills = [
     "C", "Python", "PHP", "HTML", "CSS", "JS", 
-    "Laravel", "Bootstrap", "Linux", "Java", "SQl",
+    "Laravel", "Bootstrap", "Linux", "Java POO", "SQl","GIT",
   ];
 
   return (
