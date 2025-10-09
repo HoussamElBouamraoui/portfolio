@@ -9,8 +9,8 @@ export const HeroSection = () => {
   const [showCvActions, setShowCvActions] = useState(false);
   
   const profileImages = [
-    "/src/components/ui/houssam.JPG",
-    "/src/components/ui/houssam2.JPG"
+    "/src/components/ui/houssam.png",
+    "/src/components/ui/houssam2.png"
   ];
 
   const terminalCommands = [
