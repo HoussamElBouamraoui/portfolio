@@ -4,7 +4,7 @@ import { Code, Shield, Zap } from "lucide-react";
 export const AboutSection = () => {
   const skills = [
     "C", "Python", "PHP", "HTML", "CSS", "JS", 
-    "Laravel", "Bootstrap", "Linux", "PHPMailer", "Java", "SQl",
+    "Laravel", "Bootstrap", "Linux", "Java", "SQl",
   ];
 
   return (
@@ -34,7 +34,7 @@ export const AboutSection = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-elite-white">Passion Cybersécurité</h3>
                   <p className="text-elite-white/70">
-                    Étudiant en 1ʳᵉ année de <span className="text-elite-purple font-medium">Génie Informatique</span>, passionné par la cybersécurité, 
+                    Étudiant en 1ᵉʳ année de <span className="text-elite-purple font-medium">Génie Informatique</span>, passionné par la cybersécurité,
                     l'exploitation système et le développement full stack.
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export const AboutSection = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elite-purple rounded-full"></span>
-                  PHPMailer pour les emails
+                  Resend pour les emails
                 </li>
 
                 <li className="flex items-center gap-2">

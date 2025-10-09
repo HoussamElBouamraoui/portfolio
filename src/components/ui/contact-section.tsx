@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Github, Download, Send } from "lucide-react";
+import { Mail, Github, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from '@/components/ui/sonner';
 
@@ -13,24 +13,41 @@ export const ContactSection = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  // Base API: configurable via VITE_API_BASE_URL (ex: http://localhost:3000 si vercel dev)
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+
+  type ApiResponse = { ok?: boolean; success?: boolean; error?: string };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('http://localhost/portfolio/public/send_mail.php', {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      const result = await response.json();
-      if (result.success) {
+
+      const isJson = (response.headers.get('content-type') || '').includes('application/json');
+      let result: ApiResponse = {};
+      if (isJson) {
+        try {
+          result = (await response.json()) as ApiResponse;
+        } catch {
+          result = {};
+        }
+      }
+
+      if (response.ok && (result?.ok || result?.success)) {
         toast.success('Message envoyé avec succès !');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        toast.error(result.error || 'Erreur lors de l\'envoi du message.');
+        const msg = result?.error || `Erreur (${response.status}) lors de l'envoi du message.`;
+        toast.error(msg);
       }
-    } catch (error) {
-      toast.error('Erreur serveur ou réseau.');
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Erreur serveur ou réseau.';
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -63,64 +80,11 @@ export const ContactSection = () => {
           </p>
           <div className="w-24 h-1 bg-gradient-purple mx-auto rounded-full mt-4"></div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="elite-card p-8 magnetic shadow-2xl border border-elite-purple/30 bg-elite-black/70 rounded-2xl backdrop-blur-lg">
-            <h3 className="text-xl font-semibold mb-6 text-elite-white">Envoyez-moi un message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-elite-white">
-                  Nom
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="elite-glow bg-elite-black/50 border-elite-purple/30 text-elite-white placeholder:text-elite-white/50 focus:border-elite-purple focus:ring-2 focus:ring-elite-purple/40"
-                  placeholder="Votre nom"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-elite-white">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="elite-glow bg-elite-black/50 border-elite-purple/30 text-elite-white placeholder:text-elite-white/50 focus:border-elite-purple focus:ring-2 focus:ring-elite-purple/40"
-                  placeholder="votre.email@exemple.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-elite-white">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="elite-glow bg-elite-black/50 border-elite-purple/30 text-elite-white placeholder:text-elite-white/50 focus:border-elite-purple focus:ring-2 focus:ring-elite-purple/40 resize-none"
-                  placeholder="Votre message..."
-                />
-              </div>
-              <Button type="submit" size="lg" className="w-full elite-glow bg-gradient-purple text-white border-0 magnetic shadow-lg hover:scale-[1.03] transition-transform duration-150" disabled={loading}>
-                {loading ? 'Envoi...' : <><Send className="mr-2 h-5 w-5 animate-bounce" />Envoyer le message</>}
-              </Button>
-            </form>
-          </div>
-          
+        <div className="flex justify-center">
+
+
           {/* Contact Info & Links */}
-          <div className="space-y-8">
+          <div className="space-y-8 w-full max-w-2xl">
             {/* Direct Contact */}
             <div className="elite-card p-8 magnetic">
               <h3 className="text-xl font-semibold mb-6 text-elite-white">Contact direct</h3>
@@ -140,7 +104,7 @@ export const ContactSection = () => {
                   href="tel:+212661371034"
                   className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="inline-block w-5 h-5 bg-elite-purple rounded-full flex items-center justify-center text-white font-bold">📞</span>
+                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">📞</span>
                   <div>
                     <p className="font-medium text-elite-white">Téléphone</p>
                     <p className="text-sm text-elite-white/60">+212 661 371034</p>
@@ -153,7 +117,7 @@ export const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="inline-block w-5 h-5 bg-elite-purple rounded-full flex items-center justify-center text-white font-bold">in</span>
+                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">in</span>
                   <div>
                     <p className="font-medium text-elite-white">LinkedIn</p>
                     <p className="text-sm text-elite-white/60">houssam-elbouamraoui</p>
@@ -164,7 +128,7 @@ export const ContactSection = () => {
                   href="#location"
                   className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="inline-block w-5 h-5 bg-elite-purple rounded-full flex items-center justify-center text-white font-bold">📍</span>
+                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">📍</span>
                   <div>
                     <p className="font-medium text-elite-white">Localisation</p>
                     <p className="text-sm text-elite-white/60">Morocco, Rabat Salé</p>

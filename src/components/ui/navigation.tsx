@@ -19,7 +19,6 @@ export const Navigation = () => {
     { label: "Accueil", href: "#home" },
     { label: "À propos", href: "#about" },
     { label: "Projets", href: "#projects" },
-    { label: "Compétences", href: "#skills" },
     { label: "Contact", href: "#contact" }
   ];
 

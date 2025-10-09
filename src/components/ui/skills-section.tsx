@@ -29,7 +29,7 @@ export const SkillsSection = () => {
   ];
 
   const tools = [
-    "Git/GitHub", "Linux", "PHPMailer", "JWT", "MySQL", "Pygame"
+    "Git/GitHub", "Linux", "JWT", "MySQL", "Pygame"
   ];
 
   return (
@@ -130,7 +130,7 @@ export const SkillsSection = () => {
             {["OSINT avancé", "Pentesting Web", "Analyse réseau", "Java poo"].map((learning, index) => (
               <span 
                 key={index}
-                className="px-4 py-2 bg-elite-purple/30 text-elite-white rounded-full text-sm border border-elite-purple/50 elite-glow magnetic hover:bg-elite-purple/40 transition-all"
+                className="px-4 py-2 bg-elite-purple/30 text-elite-white rounded-full text-sm border-elite-purple/50 elite-glow magnetic hover:bg-elite-purple/40 transition-all"
               >
                 {learning}
               </span>
