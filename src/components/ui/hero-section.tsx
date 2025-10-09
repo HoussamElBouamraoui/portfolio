@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Download, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export const HeroSection = () => {
   const [terminalText, setTerminalText] = useState("");
   const [showContent, setShowContent] = useState(false);
   const [showCvActions, setShowCvActions] = useState(false);
+  
+  const profileImages = [
+    "/src/components/ui/houssam.JPG",
+    "/src/components/ui/houssam2.JPG"
+  ];
 
   const terminalCommands = [
     "> Initialisation  ...",
@@ -61,11 +67,23 @@ export const HeroSection = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative magnetic">
               <div className="w-80 h-80 rounded-full overflow-hidden elite-glow border-4 border-elite-purple/20">
-                <img
-                    src="/src/components/ui/houssam.JPG"
-                    alt="Votre photo de profil"
-                    className="w-full h-full object-cover object-center filter brightness-110"
-                />
+                <Carousel 
+                  autoPlay={true} 
+                  autoPlayInterval={3000}
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="h-full">
+                    {profileImages.map((image, idx) => (
+                      <CarouselItem key={idx} className="h-full">
+                        <img
+                          src={image}
+                          alt={`Photo de profil ${idx + 1}`}
+                          className="w-full h-full object-cover object-top filter brightness-110"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
               </div>
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-elite-purple rounded-full pulse-elite"></div>
               <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-elite-white rounded-full animate-pulse"></div>

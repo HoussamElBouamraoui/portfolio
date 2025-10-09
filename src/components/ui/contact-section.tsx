@@ -186,17 +186,7 @@ export const ContactSection = () => {
               </div>
             </div>
             
-            {/* CV Download */}
-            <div className="elite-card p-8 text-center magnetic">
-              <h3 className="text-xl font-semibold mb-4 text-elite-white">Mon CV</h3>
-              <p className="text-elite-white/70 mb-6">
-                Téléchargez mon CV pour découvrir mon parcours en détail
-              </p>
-              <Button size="lg" variant="outline" className="elite-glow border-elite-purple text-elite-purple hover:bg-elite-purple hover:text-white magnetic">
-                <Download className="mr-2 h-5 w-5" />
-                Télécharger CV (PDF)
-              </Button>
-            </div>
+
             
             {/* Status */}
             <div className="elite-card p-8 text-center magnetic">

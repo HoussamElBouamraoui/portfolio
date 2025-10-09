@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Lock, FileText, Gamepad2,MessagesSquare,Car,Wifi,LifeBuoy, Globe } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export const ProjectsSection = () => {
   const projects = [
@@ -9,33 +10,54 @@ export const ProjectsSection = () => {
       description: "SecureXplorer est une plateforme web tout-en-un pour l’analyse de sécurité réseau et web. Elle propose une interface moderne et intuitive permettant d’utiliser plusieurs outils d’audit sans aucune installation locale.",
       icon: Lock,
       stack: ["PHP", "MySQL", "PHPMailer", "Sessions", "Python","JS","Css"],
-      gradient: "from-elite-purple to-elite-purple-light"
+      gradient: "from-elite-purple to-elite-purple-light",
+      linkedin:"https://www.linkedin.com/posts/el-bouamraoui-houssam-0569a1326_cybersaezcuritaez-daezveloppementweb-python-activity-7346671559475924992-ftdh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJfPQIBhVJ-_7LDaVjb7glTMqPvdnsJ2dY",
+      demo: "https://www.linkedin.com/posts/el-bouamraoui-houssam-0569a1326_cybersaezcuritaez-daezveloppementweb-python-activity-7346671559475924992-ftdh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJfPQIBhVJ-_7LDaVjb7glTMqPvdnsJ2dY",
+      images: [
+        "/picture projet/securexplorer/image_index_1.png",
+        "/picture projet/securexplorer/image_foncti_2.png",
+        "/picture projet/securexplorer/phpmailer_3.png"
+      ]
     },
     {
       title: "SmartNote",
       description: "Application de prise de notes intelligente permettant à l'utilisateur de rédiger, organiser et sauvegarder ses notes. Grâce à une intelligence artificielle intégrée, l'utilisateur peut générer automatiquement un résumé synthétique de ses notes. Ensuite, il peut créer et passer un examen personnalisé basé sur le contenu de ses notes pour s'auto-évaluer. Développé en PHP et JavaScript, avec une interface interactive et une gestion sécurisée des sessions.",
       icon: FileText,
       stack: ["PHP", "JS", "Sessions", "HTML", "CSS", "PHPMailer"],
-      gradient: "from-elite-white to-elite-purple"
+      gradient: "from-elite-white to-elite-purple",
+      demo: "https://github.com/HoussamElBouamraoui/module-note/",
+      images: [
+        "/picture projet/Smartnote/index_1.png",
+        "/picture projet/Smartnote/page_note_2.png"
+      ]
     },
     {
       title: "Jeu Snake Python",
       description: "Un mini-jeu Snake en JS pour comprendre la logique événementielle et les collisions.",
       icon: Gamepad2,
       stack: ["JS", "html", "css"],
-      gradient: "from-elite-purple-dark to-elite-white"
+      gradient: "from-elite-purple-dark to-elite-white",
+      demo: "https://github.com/HoussamElBouamraoui/serpant",
+      images: [
+        "/picture projet/snake/index_snake_1.png",
+        "/picture projet/snake/jeu_snake_2.png"
+      ]
     },
-      {
-          title: "SupportPro Hub",
-          description: "SupportPro Hub est une plateforme web complète dédiée à la gestion des tickets d’assistance.\n" +
-              "Elle centralise les demandes clients, facilite la communication entre utilisateurs et techniciens, et offre un suivi en temps réel grâce à un tableau de bord moderne et intuitif.\n" +
-              "L’application intègre un système VIP, un journal d’activités (ActivityLog), une messagerie interne, et des outils d’analyse pour un support rapide et traçable.",
-          icon: MessagesSquare,
-          stack: ["Laravel", "livewire", "MySQL" , "Blade" ,"React" ,"PHP" ,"JS","TailwindCSS"],
-          gradient: "from-elite-purple-dark to-elite-white"
-      },
-
-
+    {
+      title: "SupportPro Hub (Projet de stage)",
+      description: "SupportPro Hub est une plateforme web complète dédiée à la gestion des tickets d’assistance.\nElle centralise les demandes clients, facilite la communication entre utilisateurs et techniciens, et offre un suivi en temps réel grâce à un tableau de bord moderne et intuitif.\nL’application intègre un système VIP, un journal d’activités (ActivityLog), une messagerie interne, et des outils d’analyse pour un support rapide et traçable.",
+      icon: MessagesSquare,
+      stack: ["Laravel", "livewire", "MySQL" , "Blade" ,"React" ,"PHP" ,"JS","TailwindCSS"],
+      gradient: "from-elite-purple-dark to-elite-white",
+      demo: "https://supportprohub.example.com",
+      images: [
+        "/picture projet/supportPro hub/analyse.png",
+        "/picture projet/supportPro hub/dashboard_admin.png",
+        "/picture projet/supportPro hub/index.png",
+        "/picture projet/supportPro hub/intervention.png",
+        "/picture projet/supportPro hub/ticket.png"
+      ]
+    },
   ];
 
   return (
@@ -71,12 +93,10 @@ export const ProjectsSection = () => {
                     <h3 className="text-xl font-semibold text-elite-white">{project.title}</h3>
                   </div>
                 </div>
-                
                 {/* Description */}
                 <p className="text-elite-white/70 mb-6 leading-relaxed">
                   {project.description}
                 </p>
-                
                 {/* Tech Stack */}
                 <div className="mb-6">
                   <h4 className="text-sm font-medium mb-3 text-elite-purple">Stack technique :</h4>
@@ -92,14 +112,45 @@ export const ProjectsSection = () => {
                     ))}
                   </div>
                 </div>
-                
+                {/* Carousel */}
+                <div className="mb-6 relative">
+                  <Carousel 
+                    autoPlay={true} 
+                    autoPlayInterval={3000}
+                    className="w-full"
+                  >
+                    <CarouselContent>
+                      {project.images.map((image, idx) => (
+                        <CarouselItem key={idx}>
+                          <div className="relative">
+                            <img 
+                              src={image} 
+                              alt={`${project.title} screenshot ${idx + 1}`} 
+                              className="rounded-lg w-full h-64 object-cover border border-elite-purple/20" 
+                            />
+                            <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                              {idx + 1}/{project.images.length}
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2 bg-elite-purple/80 hover:bg-elite-purple text-white border-0" />
+                    <CarouselNext className="right-2 bg-elite-purple/80 hover:bg-elite-purple text-white border-0" />
+                  </Carousel>
+                </div>
                 {/* Actions */}
                 <div className="flex gap-3">
-                  
-                  <Button size="sm" className="elite-glow flex-1 bg-gradient-purple text-white border-0 magnetic">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Démo
-                  </Button>
+                  {project.demo && (
+                    <Button size="sm" className="elite-glow flex-1 bg-gradient-purple text-white border-0 magnetic" asChild>
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Lien
+                      </a>
+                    </Button>
+
+
+                  )}
                 </div>
               </div>
             );
@@ -157,3 +208,4 @@ export const ProjectsSection = () => {
     </section>
   );
 };
+
