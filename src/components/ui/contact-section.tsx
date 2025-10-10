@@ -70,12 +70,12 @@ export const ContactSection = () => {
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="w-full h-full bg-gradient-to-br from-elite-purple/10 via-elite-black/60 to-elite-purple/10 blur-xl"></div>
       </div>
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <span className="gradient-text glitch" data-text="Contact">Contact</span>
           </h2>
-          <p className="text-lg text-elite-white/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-elite-white/70 max-w-2xl mx-auto px-4">
             Une question ? Un projet ? <span className="text-elite-purple font-semibold">N'hésitez pas à me contacter !</span>
           </p>
           <div className="w-24 h-1 bg-gradient-purple mx-auto rounded-full mt-4"></div>
@@ -84,30 +84,30 @@ export const ContactSection = () => {
 
 
           {/* Contact Info & Links */}
-          <div className="space-y-8 w-full max-w-2xl">
+          <div className="space-y-6 sm:space-y-8 w-full max-w-2xl">
             {/* Direct Contact */}
-            <div className="elite-card p-8 magnetic">
-              <h3 className="text-xl font-semibold mb-6 text-elite-white">Contact direct</h3>
-              <div className="space-y-4">
+            <div className="elite-card p-4 sm:p-6 lg:p-8 magnetic">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-elite-white">Contact direct</h3>
+              <div className="space-y-3 sm:space-y-4">
                 <a 
                   href="mailto:houssamelbouamraoui@gmail.com"
-                  className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <Mail className="h-5 w-5 text-elite-purple" />
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-elite-purple" />
                   <div>
-                    <p className="font-medium text-elite-white">Email</p>
-                    <p className="text-sm text-elite-white/60">houssamelbouamraoui@gmail.com</p>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">Email</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">houssamelbouamraoui@gmail.com</p>
                   </div>
                 </a>
                 
                 <a
                   href="tel:+212661371034"
-                  className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">📞</span>
+                  <span className="flex w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold text-xs sm:text-sm">📞</span>
                   <div>
-                    <p className="font-medium text-elite-white">Téléphone</p>
-                    <p className="text-sm text-elite-white/60">+212 661 371034</p>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">Téléphone</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">+212 661 371034</p>
                   </div>
                 </a>
 
@@ -115,23 +115,37 @@ export const ContactSection = () => {
                   href="https://www.linkedin.com/in/el-bouamraoui-houssam-0569a1326/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">in</span>
+                  <span className="flex w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold text-xs sm:text-sm">in</span>
                   <div>
-                    <p className="font-medium text-elite-white">LinkedIn</p>
-                    <p className="text-sm text-elite-white/60">houssam-elbouamraoui</p>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">LinkedIn</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">houssam-elbouamraoui</p>
+                  </div>
+                </a>
+
+                {/* Behance */}
+                <a
+                  href="https://www.behance.net/cliipzmaniiz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                >
+                  <span className="flex w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold text-xs sm:text-sm">Be</span>
+                  <div>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">Behance</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">Mon profil design</p>
                   </div>
                 </a>
 
                 <a
                   href="#location"
-                  className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <span className="flex w-5 h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold">📍</span>
+                  <span className="flex w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full items-center justify-center text-white font-bold text-xs sm:text-sm">📍</span>
                   <div>
-                    <p className="font-medium text-elite-white">Localisation</p>
-                    <p className="text-sm text-elite-white/60">Morocco, Rabat Salé</p>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">Localisation</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">Morocco, Rabat Salé</p>
                   </div>
                 </a>
 
@@ -139,12 +153,12 @@ export const ContactSection = () => {
                   href="https://github.com/HoussamElBouamraoui"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-elite-purple/10 rounded-lg hover:bg-elite-purple/20 transition-all elite-glow magnetic border border-elite-purple/20"
                 >
-                  <Github className="h-5 w-5 text-elite-purple" />
+                  <Github className="h-4 w-4 sm:h-5 sm:w-5 text-elite-purple" />
                   <div>
-                    <p className="font-medium text-elite-white">GitHub</p>
-                    <p className="text-sm text-elite-white/60">github.com/HoussamElBouamraoui</p>
+                    <p className="font-medium text-elite-white text-sm sm:text-base">GitHub</p>
+                    <p className="text-xs sm:text-sm text-elite-white/60">github.com/HoussamElBouamraoui</p>
                   </div>
                 </a>
               </div>
@@ -153,12 +167,12 @@ export const ContactSection = () => {
 
             
             {/* Status */}
-            <div className="elite-card p-8 text-center magnetic">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-elite-purple rounded-full pulse-elite"></div>
-                <span className="text-elite-purple font-medium">Disponible pour projets</span>
+            <div className="elite-card p-4 sm:p-6 lg:p-8 text-center magnetic">
+              <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-elite-purple rounded-full pulse-elite"></div>
+                <span className="text-elite-purple font-medium text-sm sm:text-base">Disponible pour projets</span>
               </div>
-              <p className="text-sm text-elite-white/60">
+              <p className="text-xs sm:text-sm text-elite-white/60">
                 Actuellement ouvert aux opportunités de <span className="text-elite-purple">stage et projets collaboratifs</span>
               </p>
             </div>

@@ -318,6 +318,31 @@
     transform: translateY(-10px) scale(1.05);
     filter: brightness(1.2);
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .magnetic:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+    
+    .elite-glow:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+    
+    .particle {
+      width: 2px;
+      height: 2px;
+    }
+    
+    .terminal-text {
+      font-size: 0.75rem;
+    }
+    
+    .glitch:hover::before,
+    .glitch:hover::after {
+      display: none;
+    }
+  }
   
   /* Glitch effect */
   .glitch {

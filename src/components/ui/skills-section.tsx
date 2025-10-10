@@ -29,7 +29,7 @@ export const SkillsSection = () => {
   ];
 
   const tools = [
-    "Git/GitHub", "Linux", "JWT", "MySQL", "Pygame"
+    "Git/GitHub", "Linux", "JWT", "MySQL", "Pygame", "Adobe Photoshop", "Adobe Illustrator"
   ];
 
   return (
@@ -40,17 +40,17 @@ export const SkillsSection = () => {
         ))}
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <span className="gradient-text glitch" data-text="Compétences Techniques">Compétences Techniques</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-purple mx-auto rounded-full"></div>
         </div>
         
         {/* Badges & Certifications */}
-        <div className="elite-card p-8 mb-12 magnetic">
-          <h3 className="text-xl font-semibold mb-6 text-center text-elite-purple"> Badges & Certifications</h3>
+        <div className="elite-card p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 magnetic">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center text-elite-purple"> Badges & Certifications</h3>
           <div className="flex flex-wrap justify-center gap-6">
             <div className="flex flex-col items-center">
               <img
@@ -64,20 +64,20 @@ export const SkillsSection = () => {
           </div>
         </div>
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <div key={index} className="elite-card p-6 magnetic">
+              <div key={index} className="elite-card p-4 sm:p-6 magnetic">
                 <div className="text-center mb-6">
                   <div className="inline-flex p-3 bg-elite-purple/20 rounded-lg mb-4 pulse-elite">
                     <IconComponent className="h-6 w-6 text-elite-purple" />
                   </div>
-                  <h3 className="font-semibold text-lg text-elite-white">{category.title}</h3>
+                  <h3 className="font-semibold text-base sm:text-lg text-elite-white">{category.title}</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2 sm:space-y-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <li key={skillIndex} className="text-sm text-elite-white/70 flex items-center group">
+                    <li key={skillIndex} className="text-xs sm:text-sm text-elite-white/70 flex items-center group">
                       <span className="w-2 h-2 bg-elite-purple rounded-full mr-3 group-hover:pulse-elite transition-all"></span>
                       <span className="group-hover:text-elite-purple transition-colors">{skill}</span>
                     </li>
@@ -87,16 +87,16 @@ export const SkillsSection = () => {
             );
           })}
           {/* Soft Skills */}
-          <div className="elite-card p-6 magnetic">
+          <div className="elite-card p-4 sm:p-6 magnetic">
             <div className="text-center mb-6">
               <div className="inline-flex p-3 bg-elite-purple/20 rounded-lg mb-4 pulse-elite">
                 <span className="text-xl text-elite-purple">🤝</span>
               </div>
-              <h3 className="font-semibold text-lg text-elite-white">Soft Skills</h3>
+              <h3 className="font-semibold text-base sm:text-lg text-elite-white">Soft Skills</h3>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {['Communication', 'Travail en équipe', 'Gestion du temps', 'Adaptabilité', 'Esprit critique'].map((skill, i) => (
-                <li key={i} className="text-sm text-elite-white/70 flex items-center group">
+                <li key={i} className="text-xs sm:text-sm text-elite-white/70 flex items-center group">
                   <span className="w-2 h-2 bg-elite-purple rounded-full mr-3 group-hover:pulse-elite transition-all"></span>
                   <span className="group-hover:text-elite-purple transition-colors">{skill}</span>
                 </li>
@@ -105,15 +105,15 @@ export const SkillsSection = () => {
           </div>
         </div>
         {/* Tools Section */}
-        <div className="elite-card p-8 magnetic">
-          <h3 className="text-xl font-semibold mb-6 text-center text-elite-white">
+        <div className="elite-card p-4 sm:p-6 lg:p-8 magnetic">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center text-elite-white">
             🧠 Outils & Technologies
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
             {tools.map((tool, index) => (
               <div 
                 key={index}
-                className="px-6 py-3 bg-elite-purple/20 rounded-full text-sm elite-glow hover:bg-elite-purple/30 transition-all cursor-pointer magnetic border border-elite-purple/30 text-elite-white"
+                className="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 bg-elite-purple/20 rounded-full text-xs sm:text-sm elite-glow hover:bg-elite-purple/30 transition-all cursor-pointer magnetic border border-elite-purple/30 text-elite-white"
               >
                 {tool}
               </div>
@@ -122,15 +122,15 @@ export const SkillsSection = () => {
         </div>
         
         {/* Learning Path */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold mb-6 text-elite-purple glitch" data-text="🚀 En cours d'apprentissage">
+        <div className="mt-8 sm:mt-12 text-center">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-elite-purple glitch" data-text="🚀 En cours d'apprentissage">
             🚀 En cours d'apprentissage
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {["OSINT avancé", "Pentesting Web", "Analyse réseau", "Java poo"].map((learning, index) => (
               <span 
                 key={index}
-                className="px-4 py-2 bg-elite-purple/30 text-elite-white rounded-full text-sm border-elite-purple/50 elite-glow magnetic hover:bg-elite-purple/40 transition-all"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-elite-purple/30 text-elite-white rounded-full text-xs sm:text-sm border-elite-purple/50 elite-glow magnetic hover:bg-elite-purple/40 transition-all"
               >
                 {learning}
               </span>
@@ -139,105 +139,105 @@ export const SkillsSection = () => {
         </div>
         <br/><br/>
         {/* Timeline d'apprentissage verticale */}
-        <div className="elite-card p-8 mt-12 magnetic">
-          <h3 className="text-xl font-semibold mb-12 text-center text-elite-purple">Parcours & Expériences</h3>
+        <div className="elite-card p-4 sm:p-6 lg:p-8 mt-8 sm:mt-12 magnetic">
+          <h3 className="text-lg sm:text-xl font-semibold mb-8 sm:mb-12 text-center text-elite-purple">Parcours & Expériences</h3>
           <div className="relative flex flex-col items-center">
             {/* Ligne centrale verticale */}
-            <div className="absolute left-1/2 top-0 h-full w-1 bg-elite-purple/40 -translate-x-1/2 z-0"></div>
+            <div className="absolute left-1/2 top-0 h-full w-1 bg-elite-purple/40 -translate-x-1/2 z-0 hidden md:block"></div>
             {/* Etapes */}
-            <div className="w-full flex flex-col gap-12">
+            <div className="w-full flex flex-col gap-8 sm:gap-12">
               {/* BAC 2024 - gauche */}
               <div className="flex items-center w-full">
-                <div className="w-1/2 flex justify-end pr-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-right max-w-xs">
-                    <span className="text-elite-purple font-bold">2024</span>
-                    <div className="text-elite-white text-sm mt-2">Obtention du BAC, mention Bien<br/>Lycée, Maroc</div>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-8 pr-0 mb-4 md:mb-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-right max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">2024</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Obtention du BAC, mention Bien<br/>Lycée, Maroc</div>
                   </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2"></div>
+                <div className="hidden md:block md:w-1/2"></div>
               </div>
               {/* EST Safi - droite */}
               <div className="flex items-center w-full">
-                <div className="w-1/2"></div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="hidden md:block md:w-1/2"></div>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2 flex justify-start pl-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-left max-w-xs">
-                    <span className="text-elite-purple font-bold">09/2024</span>
-                    <div className="text-elite-white text-sm mt-2">Intégration à l'EST Safi<br/>Début du parcours universitaire</div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-8 pl-0 mt-0 md:mt-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-left max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">09/2024</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Intégration à l'EST Safi<br/>Début du parcours universitaire</div>
                   </div>
                 </div>
               </div>
               {/* S1 - gauche */}
               <div className="flex items-center w-full">
-                <div className="w-1/2 flex justify-end pr-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-right max-w-xs">
-                    <span className="text-elite-purple font-bold">S1 2024</span>
-                    <div className="text-elite-white text-sm mt-2">Algorithmes, Analyse des SI (Merise),<br/>Architecture des ordinateurs,<br/>Programmation Python et C,<br/>Français, Anglais</div>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-8 pr-0 mb-4 md:mb-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-right max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">S1 2024</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Algorithmes, Analyse des SI (Merise),<br/>Architecture des ordinateurs,<br/>Programmation Python et C,<br/>Français, Anglais</div>
                   </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2"></div>
+                <div className="hidden md:block md:w-1/2"></div>
               </div>
               {/* S2 - droite */}
               <div className="flex items-center w-full">
-                <div className="w-1/2"></div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="hidden md:block md:w-1/2"></div>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2 flex justify-start pl-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-left max-w-xs">
-                    <span className="text-elite-purple font-bold">S2 2025</span>
-                    <div className="text-elite-white text-sm mt-2">Développement web, Réseaux (CCNA 1),<br/>Systèmes d'exploitation,<br/>Algèbre, Structures de données en C,<br/>Français, Anglais</div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-8 pl-0 mt-0 md:mt-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-left max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">S2 2025</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Développement web, Réseaux (CCNA 1),<br/>Systèmes d'exploitation,<br/>Algèbre, Structures de données en C,<br/>Français, Anglais</div>
                   </div>
                 </div>
               </div>
               {/* Stage Osisoftware - gauche */}
               <div className="flex items-center w-full">
-                <div className="w-1/2 flex justify-end pr-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-right max-w-xs">
-                    <span className="text-elite-purple font-bold">07-08/2025</span>
-                    <div className="text-elite-white text-sm mt-2">Stage chez Osisoftware (Rabat)<br/>Développement sur Odoo<br/>Création d'une application de gestion de tickets et d'assistance<br/>
-                    <a href="/attestationstage.jpg" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-3 py-1 bg-elite-purple text-elite-white rounded hover:bg-elite-purple-dark transition">Voir l'attestation (EN)</a>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-8 pr-0 mb-4 md:mb-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-right max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">07-08/2025</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Stage chez Osisoftware (Rabat)<br/>Développement sur Odoo<br/>Création d'une application de gestion de tickets et d'assistance<br/>
+                    <a href="/attestationstage.jpg" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-2 sm:px-3 py-1 bg-elite-purple text-elite-white rounded hover:bg-elite-purple-dark transition text-xs">Voir l'attestation (EN)</a>
                     </div>
                   </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2"></div>
+                <div className="hidden md:block md:w-1/2"></div>
               </div>
               {/* S3 - droite */}
               <div className="flex items-center w-full">
-                <div className="w-1/2"></div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="hidden md:block md:w-1/2"></div>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2 flex justify-start pl-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-left max-w-xs">
-                    <span className="text-elite-purple font-bold">S3 2025</span>
-                    <div className="text-elite-white text-sm mt-2">Programmation orientée objet (Java),<br/>Administration des réseaux,<br/>UML, Algorithmes pour graphes,<br/>Cryptographie</div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-8 pl-0 mt-0 md:mt-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-left max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">S3 2025</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">Programmation orientée objet (Java),<br/>Administration des réseaux,<br/>UML, Algorithmes pour graphes,<br/>Cryptographie</div>
                   </div>
                 </div>
               </div>
               {/* S4 - gauche */}
               <div className="flex items-center w-full">
-                <div className="w-1/2 flex justify-end pr-8">
-                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-4 text-right max-w-xs">
-                    <span className="text-elite-purple font-bold">S4 2026</span>
-                    <div className="text-elite-white text-sm mt-2">En cours...</div>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-8 pr-0 mb-4 md:mb-0">
+                  <div className="bg-elite-purple/20 border border-elite-purple rounded-lg shadow-lg p-3 sm:p-4 text-right max-w-xs w-full">
+                    <span className="text-elite-purple font-bold text-sm sm:text-base">S4 2026</span>
+                    <div className="text-elite-white text-xs sm:text-sm mt-2">En cours...</div>
                   </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="w-5 h-5 bg-elite-purple rounded-full border-4 border-elite-black block"></span>
+                <div className="relative z-10 hidden md:block">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-elite-purple rounded-full border-2 sm:border-4 border-elite-black block"></span>
                 </div>
-                <div className="w-1/2"></div>
+                <div className="hidden md:block md:w-1/2"></div>
               </div>
             </div>
           </div>
