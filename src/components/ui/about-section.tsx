@@ -34,7 +34,7 @@ export const AboutSection = () => {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 text-elite-white">Passion Cybersécurité</h3>
                   <p className="text-sm sm:text-base text-elite-white/70">
-                    Étudiant en 1ᵉʳ année de <span className="text-elite-purple font-medium">Génie Informatique</span>, passionné par la cybersécurité,
+                    Étudiant en 2ᵉ année de <span className="text-elite-purple font-medium">Génie Informatique</span>, passionné par la cybersécurité,
                     l'exploitation système et le développement full stack.
                   </p>
                 </div>
