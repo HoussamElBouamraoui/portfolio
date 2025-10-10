@@ -47,7 +47,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden animated-bg">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden animated-bg pt-20 sm:pt-24">
       {/* Floating Particles */}
       <div className="particles">
         {[...Array(10)].map((_, i) => (
