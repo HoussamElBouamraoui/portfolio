@@ -1,4 +1,4 @@
-import { Code2, Database, Shield, Settings } from "lucide-react";
+import { Code2, Database, Shield, Settings, Award } from "lucide-react";
 
 export const SkillsSection = () => {
   const skillCategories = [
@@ -29,7 +29,7 @@ export const SkillsSection = () => {
   ];
 
   const tools = [
-    "Git/GitHub", "Linux", "JWT", "MySQL", "Pygame", "Adobe Photoshop", "Adobe Illustrator"
+    "Git/GitHub", "Linux", "JWT", "MySQL", "Pygame", "Adobe Photoshop", "Adobe Illustrator", "Behance"
   ];
 
   return (
@@ -61,6 +61,35 @@ export const SkillsSection = () => {
               <span className="text-sm text-elite-white">Badge CCNA 1</span>
               <span className="text-xs text-elite-purple/70">2025</span>
             </div>
+            {/* Certificat Cybersécurité (PDF) */}
+            <a
+              href="/certificat%20cyber.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ouvrir le certificat Cybersécurité (PDF)"
+              className="group flex flex-col items-center p-3 rounded-lg hover:bg-elite-purple/10 transition-all magnetic"
+            >
+              <div className="w-20 h-20 rounded-full border border-elite-purple bg-elite-black/60 shadow-lg flex items-center justify-center mb-2 elite-glow group-hover:scale-105 group-hover:bg-elite-purple/20 transition-transform">
+                <Award className="h-9 w-9 text-elite-purple" />
+              </div>
+              <span className="text-sm text-elite-white text-center">Certificat Cybersécurité</span>
+              <span className="text-[11px] text-elite-purple/70">PDF</span>
+            </a>
+
+            {/* Certificat Développement Web (Udemy) (PDF) */}
+            <a
+              href="/certificat%20dev%20web%20udemy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ouvrir le certificat Développement Web Udemy (PDF)"
+              className="group flex flex-col items-center p-3 rounded-lg hover:bg-elite-purple/10 transition-all magnetic"
+            >
+              <div className="w-20 h-20 rounded-full border border-elite-purple bg-elite-black/60 shadow-lg flex items-center justify-center mb-2 elite-glow group-hover:scale-105 group-hover:bg-elite-purple/20 transition-transform">
+                <Award className="h-9 w-9 text-elite-purple" />
+              </div>
+              <span className="text-sm text-elite-white text-center">Développement Web (Udemy)</span>
+              <span className="text-[11px] text-elite-purple/70">PDF</span>
+            </a>
           </div>
         </div>
         {/* Skills Grid */}
